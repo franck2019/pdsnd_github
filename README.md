@@ -5,7 +5,7 @@
 PDSND project
 
 ### Description
-Describe what your project is about and what it does
+Use your new Git Skills to made a Version Control of the "Explore Bikeshare" project
 
 ### Files used
 bikeshare_2.py, chicago.csv, new_york_city.csv, washington.csv
