@@ -50,8 +50,7 @@ def get_month():
     Returns:
         month - name of the month
     """
-    month = handle_invalid_inputs(question_3, months)
-    return month
+    return handle_invalid_inputs(question_3, months)
 
 
 
