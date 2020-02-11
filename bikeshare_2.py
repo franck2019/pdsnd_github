@@ -194,12 +194,6 @@ def time_stats(df, filter_choosed):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    """
-    # display the most common month and occurrence
-    popular_month = df['month'].mode()[0]
-    # count the occurrence of the most popular month
-    counts_month = df['month'].value_counts()[popular_month]
-    """
     # display the most common month and number of occurrence
     popular_month, counts_month = popular_counts_column(df['month'])
     print('The Most Popular month:{}, Counts:{},'.format(popular_month, counts_month), end = ' ')
@@ -233,7 +227,6 @@ def station_stats(df, filter_choosed):
 
     # display most frequent combination of start station and end station trip
     popular_start_end, counts_start_end = popular_counts_column(df['Start Station'] + '-' + df['End Station'])
-    #print("Popular Trip:('{}'), Counts:{},  Filter:{}\n".format(popular_start_end, counts_start_end, filter_choosed))
     print("Popular Trip:('{}'-'{}'), Counts:{},  Filter:{}\n".format(popular_start_end.split('-')[0],popular_start_end.split('-')[1], counts_start_end, filter_choosed))
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -321,12 +314,9 @@ def individual_trip_data(df):
 def main():
     while True:
         city, month, day, filter_choosed = get_filters()
-        #print (city, month, day, filter_choosed)
+        
         
         df = load_data(city, month, day)
-        #print (df)
-        #print(df.columns)
-        #print(filter_choosed)no
         
         time_stats(df, filter_choosed)
         station_stats(df, filter_choosed)
