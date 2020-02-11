@@ -62,8 +62,7 @@ def get_day():
     Returns:
         day - string contening the name of the day
     """
-    day = handle_invalid_inputs(question_4, days)
-    return day
+    return handle_invalid_inputs(question_4, days)
 
 
 
